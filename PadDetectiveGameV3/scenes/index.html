@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>DetectiveCrawler</title>
+
+
+	<!-- Bootstrap core CSS -->
+	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- MD bootstrap ui components  -->
+      <link rel="stylesheet" href="../vendor/MD_bootstrap_Components/css/mdb.css">
+
+       <!-- Custom fonts for this template -->
+	<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+
+
+	<!-- Plugin CSS -->
+	<link href="../vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+	<!-- Css of the template -->
+	<link href="../css/freelancer.min.css" rel="stylesheet">
+
+	<!-- Our custom CSS -->
+	<link rel="stylesheet" href="../css/Custom/Main.css">
+	<link rel="stylesheet" href="../css/Custom/POI_Css.css">
+	  <link rel="stylesheet" href="../css/Custom/Interview.css">
+
+
+
+  </head>
+
+  <body id="page-top">
+
+	<!-- Menu/ nav
+	<div id="mymenuDiv">
+	  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase" id="mainNav">
+		<div class="container">
+		  <a class="navbar-brand js-scroll-trigger" href="#page-top">Detective crawler <3</a>
+		  <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			Menu
+			<i class="fa fa-bars"></i>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item mx-0 mx-lg-1">
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">MenuItem1</a>
+			  </li>
+			  <li class="nav-item mx-0 mx-lg-1">
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">MenuItem2</a>
+			  </li>
+			  <li class="nav-item mx-0 mx-lg-1">
+				<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger">MenuItem3</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
+	</div>-->
+
+	<div id="menu" class="col-md-12">
+		<h1>DetectiveCrawler</h1>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#interviewModal" id="ondervraagKnop">
+			test
+		</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#suspectModal">
+			launch suspect modal
+		</button>
+		<button id="testClick">SOMS</button>
+	</div>
+
+	<!-- PlayField -->
+	  <div class="col-md-12 playField">
+		<div id="cinema" class="placeOfInterest" data-lampje="11"></div>
+        <div id="snackbar" class="placeOfInterest" data-lampje="12"></div>
+	  </div>
+
+	<!--modals -->
+    <div class="modal fade" id="suspectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fluid maxWidthNone" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div id="modal_content_placeholder_suspects" class="row">
+                    <!--PLACEHOLDER -->
+					</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="modal fade" id="interviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-fluid maxWidthNone" role="document">
+			<div class="modal-content" id="backgroundModal">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalTitleColor">Ondervraging</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" class="button-color">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div id="interview-modal-contentplaceholder">
+						<!-- placeholder-->
+					</div>
+
+
+
+				</div>
+				<div class="modal-footer">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--tempplate for suspects -->
+	<div id="suspectTemplate">
+		<div class="col-md-3 suspect ">
+			<div class="row col-md-12>">
+				<img src="${pathToImage}"/>
+			</div>
+
+			<div class="col-md-12">
+				<p>${name}</p>
+				<p>${age}</p>
+				<p>${gender}</p>
+
+				<button class="col-md-4 btn btn-danger btnLowLight">L</button>
+				<button class="col-md-4 btn btn-success btnHighlicht">H</button>
+				<button class="col-md-4 btn btn-primary btnNeurtral">N</button>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!--Template for personsOFInterest -->
+	<div id="personOfInterestTemplate">
+
+		<div class="col-md-12" >
+			<div class="interviewBox" >
+				<div class="col-md-4">
+				<img src="${pathToImage}"  id="personaImage" />
+				</div>
+
+
+				<div class="col-md-8">
+				<div class="name" id="personaNaam">${name}</div>
+				<div class="chatBox" id="interviewAnswer">${greeting}</div>
+				</div>
+
+
+					<div id="interview-question-placeholder">
+						<!-- Placeholder for interview questions -->
+					</div>
+
+
+
+				<div id="formatBox"></div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<!-- Template for interview questions -->
+	<div id="interviewQuestionTemplate">
+		<button class="interviewQuestionButton row btn btn-primary col-md-12"  data-question-id="${id}" data-answer="${answer}" >${question}</button>
+	</div>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="../vendor/jquery/jquery.min.js"></script>
+	<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="../vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+	<!-- Jquery-ui -->
+	<script src="../vendor/jquery-ui/jquery-ui.js"></script>
+
+    <!-- md_bootstrap ui components -->
+    <script src="../vendor/MD_bootstrap_Components/js/mdb.js"></script>
+
+	<!-- Jquery confirm TODO download localy!-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+	<!-- Jquery templates -->
+	<script src="../vendor/jquery-tmpl-master/jquery.tmpl.js"></script>
+
+    <!-- The main template jsFile -->
+	<script src="../js/freelancer.min.js"></script>
+
+    <!-- Our own custom js -->      
+	<script src="../js/Custom/CustomAlerts.js"></script>
+    <script src="../js/Custom/Main.js"></script>
+	<script src="../js/Custom/backgroundbg.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,18 @@
+.placeOfInterest{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position:relative;
+    background-color:#6f42c1;
+
+}
+
+#cinema{
+    top:40%;
+    left:66%;
+}
+
+#snackbar{
+    top:33%;
+    left:16%;
+}

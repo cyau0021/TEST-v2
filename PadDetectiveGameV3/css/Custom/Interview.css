@@ -1,0 +1,42 @@
+#personaImage {
+    height: 100px;
+    border-radius: 100px;
+}
+
+
+.chatBox {
+    height: 150px;
+    background-color: #F4EED6;
+    border-radius: 3%;
+    border: 4px solid black;
+    margin-left: -2%;
+}
+
+#modalTitleColor {
+    color: #F4EED6;
+}
+
+#backgroundModal {
+    background-color: #69A1A0;
+}
+
+
+
+
+/* .interviewQuestionButton {
+
+    background-color: #F4EED6;
+    font-size: 14px;
+    color: #000000;
+    text-align: center;
+    border: 1px; solid #000000;
+    text-decoration: none;
+    outline: none;
+}
+
+.interviewQuestionButton:hover {
+    transition: 0.3s;
+    background-color: #cccccc;
+    color: #f7f9ea;
+    text-decoration: underline;
+} */
